@@ -2,7 +2,7 @@
 #define SYSTEM_H
 
 #include <vector> //to use standard C++ vectors
-// #include "box.h" //yet to be created!
+#include "box.h" //yet to be created!
 // #include "particle.h" //yet to be created!
 
 class System {
@@ -11,10 +11,12 @@ class System {
     System();
     int particleNumber;
     double noiseStrength;
-    // Box simulationBox;
+    Box simulationBox;
     // std::vector<Particle> particles;
 
     void updateRule();
 };
 
 #endif
+
+

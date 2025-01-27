@@ -8,3 +8,4 @@ System::System() {
 void System::updateRule(){
     std::cout << "Updating the system..." <<std::endl;
 }
+
