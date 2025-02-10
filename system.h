@@ -3,6 +3,8 @@
 
 #include <vector> //to use standard C++ vectors
 #include <random> //to use random number generator
+#include <fstream> 
+#include <string>
 #include "box.h" 
 #include "particle.h" 
 
@@ -24,9 +26,14 @@ class System {
         std::uniform_real_distribution<double> uniformDist;
         // function to sample uniformly distributed random numbers
         double uniform(double min, double max);
-
+        //function to initialise the system in a random state
+        void randomStart();
         void updateRule();
+
+        void saveConfig(const std::string &filename);
 };
+
+
 #endif
 
 

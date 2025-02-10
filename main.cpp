@@ -11,6 +11,19 @@ int main(){
     std::cout<<"The system has noise "<<model.noiseStrength<<std::endl;
     std::cout<<"The system has a simulation box of side "<<model.simulationBox.getSidex()<<std::endl;
     std::cout<<"A random number between 10 and 20 is: "<<model.uniform(10,20)<<std::endl;
+    model.randomStart();
     model.updateRule();
+    model.saveConfig("init.conf");
+
+    int iterations = 1000; 
+
+
+    std::string root = "frames/";
+    for (int iteration = 0; iteration <iterations;iteration++)
+    {   std::cout<<"iteration"<<iteration<<std::endl;
+        if (iteration%5==0) model.saveConfig( root+std::to_string(iteration));
+        model.updateRule();
+    }
+
     return 0;
 }
